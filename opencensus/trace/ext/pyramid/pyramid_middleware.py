@@ -84,7 +84,7 @@ class OpenCensusTweenFactory(object):
                                               self.propagator.HEADERS)
                 span_context = self.propagator.from_carrier(headers)
             else:
-                header = get_context_header()
+                header = get_context_header(request)
                 span_context = self.propagator.from_header(header)
 
             tracer = tracer_module.Tracer(
